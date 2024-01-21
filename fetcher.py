@@ -66,7 +66,6 @@ with open(links_folder,'r') as file:
         print("Directory exists.")
     else:
         print("Directory not found, creating one...")
-
         
         try:
             os.makedirs(folder_name)
