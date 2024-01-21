@@ -11,7 +11,7 @@ def non_rawing(title,raw_data,foldername):
     a_text = ''
 
     if not title:
-        chapter_title = soup.find("a",_class="novel-title")
+        chapter_title = soup.find("span",class_="chr-text")
         title = chapter_title.get_text()
         a_text += '\n' + title + '\n\n'
 
