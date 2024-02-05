@@ -11,8 +11,8 @@ import math
 # forder and link setup here and for text and data extraction see beautify.py
 
 
-folder_name = "/home/scelester/ProjectD/fetcher/Against the gods/Chapter_upto/"
-links_folder = "Against the gods/chapterLinks_ATG.txt"
+folder_name = "STORAGE/Against the gods/Chapter_upto/"
+links_folder = "STORAGE/Against the gods/chapterLinks_ATG.txt"
 headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"}
 counter = 0
 
