@@ -2,7 +2,7 @@
 const linksWithChapterText = Array.from(document.querySelectorAll('a span.nchr-text'))
   .filter(link => {
     const chapterNumber = parseInt(link.textContent.match(/\d+/)[0]);
-    return chapterNumber > 4147;
+    return chapterNumber > 4508;
   });
 
 // Filter the selected elements to get only those starting with "Chapter" (case-insensitive)

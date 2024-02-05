@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import urllib.request
 import extraction as b
 import os
@@ -9,8 +11,8 @@ import math
 # forder and link setup here and for text and data extraction see beautify.py
 
 
-folder_name = "Nine Star Hegemon Body Arts p8 test"
-links_folder = "chapterLinks new.txt"
+folder_name = "STORAGE/Against the gods/Chapter_upto/"
+links_folder = "STORAGE/Against the gods/chapterLinks_ATG.txt"
 headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"}
 counter = 0
 
@@ -74,7 +76,7 @@ with open(links_folder,'r') as file:
             print(f"Error: {e}")
     
     links = file.readlines()
-    each_slice = math.floor(len(links)/8)
+    each_slice = math.floor(len(links)/15)
     
     l1 = links[:each_slice-1]
     l2 = links[each_slice-1:(each_slice)*2-1]
@@ -83,7 +85,14 @@ with open(links_folder,'r') as file:
     l5 = links[each_slice*4-1:each_slice*5-1]
     l6 = links[each_slice*5-1:each_slice*6-1]
     l7 = links[each_slice*6-1:each_slice*7-1]
-    l8 = links[each_slice*7-1:]
+    l8 = links[each_slice*7-1:each_slice*8-1]
+    l9 = links[each_slice*8-1:each_slice*9-1]
+    l10 = links[each_slice*9-1:each_slice*10-1]
+    l11 = links[each_slice*10-1:each_slice*11-1]
+    l12 = links[each_slice*11-1:each_slice*12-1]
+    l13 = links[each_slice*12-1:each_slice*13-1]
+    l14 = links[each_slice*13-1:each_slice*14-1]
+    l15 = links[each_slice*14-1:]
 
     T1 = threading.Thread(name="t1",target=indi_thread_call,args=(l1,))
     T2 = threading.Thread(name="t2",target=indi_thread_call,args=(l2,))
@@ -93,6 +102,14 @@ with open(links_folder,'r') as file:
     T6 = threading.Thread(name="t6",target=indi_thread_call,args=(l6,))
     T7 = threading.Thread(name="t7",target=indi_thread_call,args=(l7,))
     T8 = threading.Thread(name="t8",target=indi_thread_call,args=(l8,))
+    T9 = threading.Thread(name="t9",target=indi_thread_call,args=(l9,))
+    T10 = threading.Thread(name="t10",target=indi_thread_call,args=(l10,))
+    T11 = threading.Thread(name="t11",target=indi_thread_call,args=(l11,))
+    T12 = threading.Thread(name="t12",target=indi_thread_call,args=(l12,))
+    T13 = threading.Thread(name="t13",target=indi_thread_call,args=(l13,))
+    T14 = threading.Thread(name="t14",target=indi_thread_call,args=(l14,))
+    T15 = threading.Thread(name="t15",target=indi_thread_call,args=(l15,))
+
 
     T1.start()
     T2.start()
@@ -102,6 +119,13 @@ with open(links_folder,'r') as file:
     T6.start()
     T7.start()
     T8.start()
+    T9.start()
+    T10.start()
+    T11.start()
+    T12.start()
+    T13.start()
+    T14.start()
+    T15.start()
 
     T1.join()
     T2.join()
@@ -109,4 +133,12 @@ with open(links_folder,'r') as file:
     T4.join()
     T5.join()
     T6.join()
+    T7.join()
     T8.join()
+    T9.join()
+    T10.join()
+    T11.join()
+    T12.join()
+    T13.join()
+    T14.join()
+    T15.join()

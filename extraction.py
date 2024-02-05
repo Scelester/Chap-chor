@@ -26,7 +26,7 @@ def non_rawing(title,raw_data,foldername):
         text += '\n\n'
         listed_content.append(text)
 
-    a_text += ''.join(listed_content[2:-2])
+    a_text += ''.join(listed_content)
 
     x = open(f'{foldername}/{title}.txt','w',encoding='utf-8')
     x.write(a_text)
