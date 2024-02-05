@@ -22,7 +22,7 @@ const blobURL = URL.createObjectURL(blob);
 // Create a link element to trigger the download
 const downloadLink = document.createElement('a');
 downloadLink.href = blobURL;
-downloadLink.download = 'chapterLinks new1.txt';
+downloadLink.download = 'chapterLinks new.txt';
 downloadLink.textContent = 'Download Chapter Links';
 
 // Trigger the click event to start the download
