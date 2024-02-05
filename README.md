@@ -9,3 +9,7 @@ then edit fetcher.py and extraction.py
 
 Finally run,
 python featcher.py
+
+
+
+**Since this is personal project i haven't created an GUI or made it simpler but if someone wants to i can make improve these modules so you can import it and customize it for the gui  **
