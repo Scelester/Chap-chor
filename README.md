@@ -6,7 +6,7 @@ scrap/fetch chapters from websites to create epub
   2. Use js note to fetch chapter list from the sites using the browser console.
   3. Then edit fetcher.py and extraction.py
   4. Run, `python featcher`
-  5. To create you need run `python tests_and_features/epub_creator.py` file (might need some simple editing)
+  5. To create EPUB you need run `python tests_and_features/epub_creator.py` file (might need some simple editing)
   6. explore tests_and_features folder for more.
 
 
