@@ -15,6 +15,7 @@ class Create_EPUB:
         self.book.set_cover("Xia Qingyue.png",open("/home/scelester/ProjectD/fetcher/STORAGE/Against the gods/Xia Qingyue.png",'rb').read())
         self.book.add_item(epub.EpubNcx())
         self.book.add_item(epub.EpubNav())
+        self.chapter_list = []
 
         self.book.spine = ['nav']
 
@@ -41,7 +42,20 @@ class Create_EPUB:
     def add_chapter(self,file):
         file_content = file.read().strip().split('\n')
         title = file_content[0]
-        body = '<br>'.join(file_content[1:]) 
+        
+        formatted_body_array = []
+        old_line = "Some()"
+        for line in file_content[1:]:
+            if line == old_line == "":
+                pass
+            else:
+                formatted_body_array.append(line)
+            old_line = line
+
+
+        body = '<br>'.join(formatted_body_array) 
+        
+
         xht_title = ''.join(title.split(' '))
 
         chapter = epub.EpubHtml(title=f'{title}', file_name=f'{xht_title}.xhtml', lang='en')
@@ -49,9 +63,10 @@ class Create_EPUB:
 
         self.book.add_item(chapter)
 
-        
+        self.chapter_list.append(chapter)
         self.book.spine.append(chapter)
-        
+        self.book.toc.append(epub.Link(href=f"{xht_title}.xhtml",title=title,uid=chapter.id))
+            
 
     def finilize(self):
         epub.write_epub('Against The Gods 0-2029.epub',self.book,{})
